@@ -108,15 +108,15 @@ Note that as of Moya 10, SPM only works with Swift 4 toolchain and greater.
 For Moya, use the following entry in your Podfile:
 
 ```rb
-pod 'Moya', '~> 10.0'
+pod 'Moya' '~> 11.0.0-beta.2'
 
 # or 
 
-pod 'Moya/RxSwift', '~> 10.0'
+pod 'Moya/RxSwift' '~> 11.0.0-beta.2'
 
 # or
 
-pod 'Moya/ReactiveSwift', '~> 10.0'
+pod 'Moya/ReactiveSwift' '~> 11.0.0-beta.2'
 ```
 
 Then run `pod install`.
