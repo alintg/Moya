@@ -22,3 +22,9 @@ test:
   post:
     - bundle exec danger
     - bash <(curl -s https://codecov.io/bash) -J Moya
+
+deployment:
+  branch: update-pod-install-in-readme-ci
+  override:
+    commands:
+      - scripts/update-readme-with-latest-pod-version.sh
