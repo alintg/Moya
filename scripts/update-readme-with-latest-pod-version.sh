@@ -28,7 +28,7 @@ else
 	git add *.md
 	git commit -m "${UPDATE_README_COMMIT_MESSAGE}"
 	# Push quitely to prevent showing the token in log
-	git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/alintg/Moya.git master
+	git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/alintg/Moya.git update-pod-install-in-readme-ci
 
 	echo "Done."
 fi
