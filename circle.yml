@@ -19,7 +19,7 @@ dependencies:
 test:
   pre:
   override:
-  - rake test && rake test:carthage && rake build_example
+  #- rake test && rake test:carthage && rake build_example
   post:
     - if [ $CIRCLE_BRANCH = 'update-pod-install-in-readme-ci' ]; then scripts/update-readme-with-latest-pod-version.sh; fi
     - bundle exec danger
