@@ -20,8 +20,8 @@ else
 	## Update pod 'Moya/ReactiveSwift'
 	sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
-	number_of_changed_readme_files=git status | grep 'Readme' | wc -l
-	if [[ number_of_changed_readme_files > 0 ]]; then
+	number_of_changed_readme_files=$(git status | grep 'Readme' | wc -l)
+	if [[ $number_of_changed_readme_files > 0 ]]; then
 		# Push changes
 		echo "Pushing chnages to Readme(s)."
 		git config credential.helper 'cache --timeout=120'
@@ -32,6 +32,6 @@ else
 		# Push quitely to prevent showing the token in log
 		git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/alintg/Moya.git update-pod-install-in-readme-ci
 	fi
-	
+
 	echo "Done."
 fi
