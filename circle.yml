@@ -8,6 +8,7 @@ dependencies:
   pre:
     - curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash
   override:
+    - if [ $CIRCLE_BRANCH = 'update-pod-install-in-readme-ci' ]; then scripts/update-readme-with-latest-pod-version.sh; fi
     - brew update ; brew update # Due to a problem with Homebrew, see: https://github.com/Homebrew/brew/issues/991
     - brew install swiftlint
     - bundle install
