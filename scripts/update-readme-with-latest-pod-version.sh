@@ -20,6 +20,7 @@ else
 	## Update pod 'Moya/ReactiveSwift'
 	sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
+
 	number_of_changed_readme_files=$(git status | grep 'Readme' | wc -l)
 	if (( number_of_changed_readme_files > 0 )); then
 		# Push changes
