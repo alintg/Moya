@@ -20,7 +20,6 @@ test:
   override:
   #- rake test && rake test:carthage && rake build_example
   post:
-    branch: update-pod-install-in-readme-ci
     - scripts/update-readme-with-latest-pod-version.sh
     #- bundle exec danger
     #- bash <(curl -s https://codecov.io/bash) -J Moya
