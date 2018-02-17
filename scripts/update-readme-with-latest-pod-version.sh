@@ -31,6 +31,8 @@ else
 		git commit -m "${UPDATE_README_COMMIT_MESSAGE}"
 		# Push quitely to prevent showing the token in log
 		git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/alintg/Moya.git update-pod-install-in-readme-ci
+	else
+		echo "No Readme files changed."
 	fi
 
 	echo "Done."
