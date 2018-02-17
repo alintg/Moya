@@ -6,15 +6,15 @@ machine:
 
 dependencies:
   pre:
-    - curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash
+    #- curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash
   override:
-    - brew update ; brew update # Due to a problem with Homebrew, see: https://github.com/Homebrew/brew/issues/991
-    - brew install swiftlint
-    - bundle install
-    - scripts/bootstrap-if-needed.sh # only bootstrap if we have updated dependencies since our last cache.
+    #- brew update ; brew update # Due to a problem with Homebrew, see: https://github.com/Homebrew/brew/issues/991
+    #- brew install swiftlint
+    #- bundle install
+    #- scripts/bootstrap-if-needed.sh # only bootstrap if we have updated dependencies since our last cache.
+    - if [ $CIRCLE_BRANCH = 'update-pod-install-in-readme-ci' ]; then scripts/update-readme-with-latest-pod-version.sh; fi
   cache_directories:
     - "Carthage" # Cache carthage to speed up builds.
-    - if [ $CIRCLE_BRANCH = 'update-pod-install-in-readme-ci' ]; then scripts/update-readme-with-latest-pod-version.sh; fi
 
 test:
   pre:
