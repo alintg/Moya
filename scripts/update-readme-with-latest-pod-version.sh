@@ -22,7 +22,7 @@ else
 
 	number_of_changed_readme_files=$(git status | grep 'Readme' | wc -l)
 	echo ">>> $number_of_changed_readme_files"
-	if [[ "$number_of_changed_readme_files" > 0 ]]; then
+	if (( $number_of_changed_readme_files > 0 )); then
 		# Push changes
 		echo "Pushing chnages to Readme(s)."
 		git config credential.helper 'cache --timeout=120'
