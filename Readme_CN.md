@@ -85,15 +85,15 @@ let package = Package(
 在您的Podfile文件中使用Moya:
 
 ```rb
-pod 'Moya', '~> 10.0'
+pod 'Moya' '~> 11.0.0-beta.2'
 
 # or 
 
-pod 'Moya/RxSwift', '~> 10.0'
+pod 'Moya/RxSwift' '~> 11.0.0-beta.2'
 
 # or
 
-pod 'Moya/ReactiveSwift', '~> 10.0'
+pod 'Moya/ReactiveSwift' '~> 11.0.0-beta.2'
 ```
 
 然后运行 `pod install`.
